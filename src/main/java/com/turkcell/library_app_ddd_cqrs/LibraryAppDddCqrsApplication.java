@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LibraryAppDddCqrsApplication {
 
+	// Alişan - Book - Language - Fine
+	// Arda - Borrow - Publisher - Bookcopy
+	// Beytullah - Customer - Translator - Author - Translator
+
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryAppDddCqrsApplication.class, args);
 	}
