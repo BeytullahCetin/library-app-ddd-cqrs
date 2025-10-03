@@ -8,7 +8,7 @@ public class LibraryAppDddCqrsApplication {
 
 	// Alişan - Book - Language - Fine
 	// Arda - Borrow - Publisher - Bookcopy
-	// Beytullah - Customer - Translator - Author - Translator
+	// Beytullah - Customer - Translator - Author - Reservation
 
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryAppDddCqrsApplication.class, args);
