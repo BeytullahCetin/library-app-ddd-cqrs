@@ -9,6 +9,8 @@ import com.turkcell.library_app_ddd_cqrs.domain.author.model.AuthorId;
 public interface AuthorRepository {
 	Optional<Author> findById(AuthorId id);
 
+	List<Author> findAll();
+
 	List<Author> findAllPaged(Integer pageIndex, Integer pageSize);
 
 	Author save(Author author);

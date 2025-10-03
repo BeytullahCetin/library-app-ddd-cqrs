@@ -9,6 +9,8 @@ import com.turkcell.library_app_ddd_cqrs.domain.reservation.model.ReservationId;
 public interface ReservationRepository {
 	Optional<Reservation> findById(ReservationId id);
 
+	List<Reservation> findAll();
+
 	List<Reservation> findAllPaged(Integer pageIndex, Integer pageSize);
 
 	Reservation save(Reservation reservation);
