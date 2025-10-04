@@ -1,8 +1,11 @@
 package com.turkcell.library_app_ddd_cqrs.application.book.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.turkcell.library_app_ddd_cqrs.application.book.dto.BookResponse;
 import com.turkcell.library_app_ddd_cqrs.domain.book.model.Book;
 
+@Component
 public class BookResponseMapper {
     public BookResponse toResponse(Book domain) {
         return new BookResponse(

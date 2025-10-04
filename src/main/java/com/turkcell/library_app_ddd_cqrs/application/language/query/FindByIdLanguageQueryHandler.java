@@ -18,5 +18,4 @@ public class FindByIdLanguageQueryHandler implements QueryHandler<FindByIdLangua
     public LanguageResponse handle(FindByIdLanguageQuery query) {
         return languageResponseMapper.toResponse(languageRepository.findById(new LanguageId(query.id())).get());
     }
-
 }

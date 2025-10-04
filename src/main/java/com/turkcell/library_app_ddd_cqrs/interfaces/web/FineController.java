@@ -1,6 +1,5 @@
 package com.turkcell.library_app_ddd_cqrs.interfaces.web;
 
-
 import com.turkcell.library_app_ddd_cqrs.application.fine.dto.FineResponse;
 import com.turkcell.library_app_ddd_cqrs.application.fine.query.FindByIdFineQuery;
 import com.turkcell.library_app_ddd_cqrs.application.fine.query.ListFinesPagedQuery;
@@ -18,10 +17,8 @@ public class FineController {
     private final QueryHandler<ListFinesPagedQuery, List<FineResponse>> listFineQueryHandler;
     private final QueryHandler<FindByIdFineQuery, FineResponse> findByIdFineQueryHandler;
 
-
     public FineController(QueryHandler<ListFinesPagedQuery, List<FineResponse>> listFineQueryHandler,
-                          QueryHandler<FindByIdFineQuery, FineResponse> findByIdFineQueryHandler
-    ) {
+            QueryHandler<FindByIdFineQuery, FineResponse> findByIdFineQueryHandler) {
         this.listFineQueryHandler = listFineQueryHandler;
         this.findByIdFineQueryHandler = findByIdFineQueryHandler;
 
@@ -32,9 +29,8 @@ public class FineController {
         return listFineQueryHandler.handle(query);
     }
 
-    @GetMapping("/v1/fines")
+    @GetMapping("/v1/fines/{id}")
     public FineResponse getFinesPaged(@Valid FindByIdFineQuery query) {
         return findByIdFineQueryHandler.handle(query);
     }
 }
-

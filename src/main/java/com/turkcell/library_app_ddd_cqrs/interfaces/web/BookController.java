@@ -22,8 +22,8 @@ public class BookController {
     private final CommandHandler<CreateBookCommand, CreatedBookResponse> createBookQueryHandler;
 
     public BookController(QueryHandler<ListBooksPagedQuery, List<BookResponse>> listBookQueryHandler,
-                            QueryHandler<FindByIdBookQuery, BookResponse> findByIdBookQueryHandler,
-                            CommandHandler<CreateBookCommand, CreatedBookResponse> createBookQueryHandler) {
+            QueryHandler<FindByIdBookQuery, BookResponse> findByIdBookQueryHandler,
+            CommandHandler<CreateBookCommand, CreatedBookResponse> createBookQueryHandler) {
         this.listBookQueryHandler = listBookQueryHandler;
         this.findByIdBookQueryHandler = findByIdBookQueryHandler;
         this.createBookQueryHandler = createBookQueryHandler;
@@ -34,7 +34,7 @@ public class BookController {
         return listBookQueryHandler.handle(query);
     }
 
-    @GetMapping("/v1/books")
+    @GetMapping("/v1/books/{id}")
     public BookResponse getBooksPaged(@Valid FindByIdBookQuery query) {
         return findByIdBookQueryHandler.handle(query);
     }
@@ -43,8 +43,5 @@ public class BookController {
     public CreatedBookResponse createBook(@RequestBody CreateBookCommand command) {
         return createBookQueryHandler.handle(command);
     }
-
-
-
 
 }
