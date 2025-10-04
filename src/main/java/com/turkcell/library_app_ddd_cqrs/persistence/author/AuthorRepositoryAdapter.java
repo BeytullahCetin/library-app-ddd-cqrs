@@ -27,15 +27,6 @@ public class AuthorRepositoryAdapter implements AuthorRepository {
 	}
 
 	@Override
-	public List<Author> findAll() {
-		return repository
-				.findAll()
-				.stream()
-				.map(authorEntityMapper::toDomain)
-				.toList();
-	}
-
-	@Override
 	public List<Author> findAllPaged(Integer pageIndex, Integer pageSize) {
 		return repository
 				.findAll(PageRequest.of(pageIndex, pageSize))
