@@ -41,7 +41,7 @@ public class AuthorController {
 		return listAuthorQueryHandler.handle(query);
 	}
 
-	@GetMapping("/v1/authors")
+	@GetMapping("/v1/authors/{id}")
 	public AuthorResponse getAuthorsPaged(@Valid FindByIdAuthorQuery query) {
 		return findByIdAuthorQueryHandler.handle(query);
 	}

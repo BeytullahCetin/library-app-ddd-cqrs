@@ -7,6 +7,7 @@ import com.turkcell.library_app_ddd_cqrs.core.cqrs.Query;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record FindByIdAuthorQuery(@NotBlank UUID id) implements Query<AuthorResponse> {
-
+public record FindByIdAuthorQuery(
+		@NotBlank UUID id)
+		implements Query<AuthorResponse> {
 }
