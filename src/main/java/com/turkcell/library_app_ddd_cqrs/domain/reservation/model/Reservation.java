@@ -2,7 +2,6 @@ package com.turkcell.library_app_ddd_cqrs.domain.reservation.model;
 
 import java.time.LocalDate;
 
-import com.turkcell.library_app_ddd_cqrs.domain.customer.model.Customer;
 import com.turkcell.library_app_ddd_cqrs.domain.customer.model.CustomerId;
 
 public class Reservation {
@@ -22,11 +21,11 @@ public class Reservation {
 		this.status = status;
 	}
 
-	public static Reservation create(Customer customer, int bookId, LocalDate expireAt, String status) {
+	public static Reservation create(CustomerId customerId, int bookId, LocalDate expireAt, String status) {
 		validateExpireAt(expireAt);
 		validateStutus(status);
 
-		return new Reservation(ReservationId.generate(), customer.getId(), bookId, expireAt, status);
+		return new Reservation(ReservationId.generate(), customerId, bookId, expireAt, status);
 	}
 
 	public static Reservation rehydrate(ReservationId id, CustomerId customerId, int bookId, LocalDate expireAt,
