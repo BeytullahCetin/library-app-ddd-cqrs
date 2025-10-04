@@ -3,6 +3,5 @@ package com.turkcell.library_app_ddd_cqrs.application.book.dto;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public record CreatedBookResponse(UUID id, String title, String isbn, int pageCount, LocalDate publishDate) {
-	
+public record BookResponse(UUID id, String title, String isbn, int pageCount, LocalDate publishDate) {
 }
